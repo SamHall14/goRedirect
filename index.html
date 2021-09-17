@@ -1,0 +1,36 @@
+<h1>Welcome to the goRedirect Zone!</h1>
+
+<p> Fun fact, this is a simple demo of redirecting some alphanumeric shorthand to a sick site you can read! Is this a clone of bit.ly? Yeah. But it's in golang! Wow! I'm so impressed!</p>
+
+
+<h2>Want to make a redirect link!?</h2>
+
+<!-- Link together the forms for the shorthand and target link -->
+Enter the shorthand you would like to use (alphanumeric exclusively only, i.e. a-z, A-Z, and 0-9 only).
+<br>
+<form action="/shorthand/create" method="POST">
+  <h4>Where to?</h4>
+  <label for="shorthand">http://redirect.samhall.xyz/</label>
+  <input type="text" id="shorthand" name="shorthand" placeholder="exampleShorthand"><br>
+
+  <h4> What's the destination that you would like to send it to? </h4>
+  <label for="target">Target link:</label><br>
+  <!-- value is default value, placeholder is text that disappears on clicking -->
+  <input type="text" id="target" name="target" placeholder="https://www.youtube.com/watch?v=1cfKc8U4iwg"><br><br>
+  <input type="submit" value="Submit">
+</form>
+
+<br>
+
+
+<h2>Want to use a redirect link!?</h2>
+
+<h4>Enter the shorthand that already exists!</h4>
+<br>
+<form action="/" method="POST">
+	<label for="shorthandExisting">redirect.samhall.xyz/</label>
+	<input type="text" id="shorthandExisting" name="shorthandExisting" placeholder="exampleShorthand"><br>
+	<input type="submit" value="Submit">
+</form>
+<br>
+<em>Note, you can enter the URL shortened link directly into the bar, it will then redirect you automatically if it's a valid link (e.g. redirect.samhall.xyz/exampleShorthand).</em>
