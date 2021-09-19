@@ -5,7 +5,7 @@ https://redirect.samhall.xyz for creation of shorthands and https://redirect.sam
 
 This is currently sitting at port 8080 since I don't want to pay for a second droplet from DigitalOcean and I haven't figured out how to have a browser display the URI without the port.
 
-System turns off after receiving a SIGTERM from your unixlike OS, which will then save all shorthands and redirects to disk. A timer for saving to disk still hasn't been implemented. Current codebase has the beginnings of a certauto implementation for a smooth https experience, but that is not yet. I want to state that this is my first go project in a *long time* and the most complex I've tried (as of 9/16/2021). I learned a lot about how interfaces gel and io for this system and receiving system calls from UNIX. You can generate the self-signed certificate with the keys folder and the appropriate shell script.
+System turns off after receiving a SIGTERM from your unixlike OS, which will then save all shorthands and redirects to disk. A timer for saving to disk still hasn't been implemented. Current codebase has the beginnings of a certauto implementation for a smooth https experience, but that is not yet complete. I want to state that this is my first go project in a *long time* and the most complex I've tried (as of 9/16/2021). I learned a lot about how interfaces gel and io for this system and receiving system calls from UNIX. You can generate the self-signed certificate with the keys folder and the appropriate shell script.
 
 **WARNING: THIS ONLY HAS BEEN TESTED ON DEBIAN/ARCHLINUX, YOUR MILEAGE MAY VARY**
 
