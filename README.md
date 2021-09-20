@@ -47,4 +47,5 @@ server {
 - Set up a test to check is the target is a valid site
 - Prevent recursive shorthands (i.e. shorthands don't point to anything associated with the home domain
 - Set up templating for the index page so it executes based on site name (i.e. redirect.samhall.xyz) instead of changing everything in each file manually.
+- Set max length of shorthand and make it work with the template [(*See Mozilla's html guide for more info.*)](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/maxlength)
 - Final cleanup of source code so it's readable, sorry for the mess (🙏 pardonnez-moi) 
