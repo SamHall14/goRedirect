@@ -43,6 +43,8 @@ server {
 ## Features to add
 
 - Get certauto running with this server
+- Have an autosave feature that saves object to a separate file and the feature to recover with it.
+- Set up the flag package to allow for custom ports/ other features (maybe save timer)
 - Get redirect to show the site as is without :8080 at the end.
 - Set up a test to check is the target is a valid site
 - Prevent recursive shorthands (i.e. shorthands don't point to anything associated with the home domain
