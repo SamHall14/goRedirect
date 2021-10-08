@@ -266,13 +266,20 @@ func createHandler(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "Bad Request", http.StatusTooManyRequests)
 		return
 	}
+	// grab the shorthand!
 	tmpShorthand := r.FormValue("shorthand")
+
 	target := r.FormValue("target")
-	// handler
+	// handler or target is null
 	if tmpShorthand == "" || target == "" {
 		fmt.Fprintln(w, "<h1>400: Bad Request</h1>Please define a target and handler.")
 		http.Error(w, "", http.StatusBadRequest)
 		return
+	}
+	// check if links is alphanumeric
+	if !(shorthandCheck.MatchString(tmpShorthand)) {
+		fmt.Fprintln(w, "<h1>400: Bad Request</h1>Please define a target with alphanumeric characters!")
+		http.Error(w, "", http.StatusBadRequest)
 	}
 	// check if links already is taken
 	if links.Redirects[tmpShorthand] != "" {
@@ -280,6 +287,7 @@ func createHandler(w http.ResponseWriter, r *http.Request) {
 			http.StatusConflict)
 		return
 	}
+
 	// assign shorthand to target
 	// use template to send back a confirm message
 	// MAKE SURE THAT TARGET HAS https:// or http:// at the front or it will be treated internally
@@ -337,6 +345,7 @@ func renderTemplate(w http.ResponseWriter, tmpl string, info interface{}) {
 var validPath = regexp.MustCompile("^/(edit|save|view)/([a-zA-Z0-9]+)$")
 var indexCatcher = regexp.MustCompile("^/index[/]+$")
 var reroutePath = regexp.MustCompile("^/([a-zA-Z0-9]+)$")
+var shorthandCheck = regexp.MustCompile("^[a-zA-Z0-9+]$")
 var httpCheck = regexp.MustCompile("^https?://.*")
 
 func makeHandler(fn func(http.ResponseWriter, *http.Request, string)) http.HandlerFunc {
