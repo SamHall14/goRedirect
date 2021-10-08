@@ -11,7 +11,7 @@ System turns off after receiving a SIGTERM from your unixlike OS, which will the
 
 ## nginx setup
 
-Just to let you know that I have nginx handle redirects to the server so I can have my main site and this redirect subdomain. Here's the following server config. 
+Just to let you know that I have nginx handle redirects to the server so I can have my main site and this redirect subdomain. Here's the following server config. I tried using reverse proxy with proxy_pass but it keeps 404'ing and I'll figure it out at some later time. SSL is pretty much on the back burner until I get another VPS that I'm comfortable with wrecking.
 
 ```
 # https redirecting traffic to redirect.samhall.xyz to port 8080
@@ -43,11 +43,11 @@ server {
 ## Features to add
 
 - Get certauto running with this server
-- Have an autosave feature that saves object to a separate file and the feature to recover with it.
+- ~~Have an autosave feature that saves object to a separate file and the feature to recover with it.~~
 - Set up the flag package to allow for custom ports/ other features (maybe save timer)
 - Get redirect to show the site as is without :8080 at the end.
 - Set up a test to check is the target is a valid site
-- Prevent recursive shorthands (i.e. shorthands don't point to anything associated with the home domain
-- Set up templating for the index page so it executes based on site name (i.e. redirect.samhall.xyz) instead of changing everything in each file manually.
-- Set max length of shorthand and make it work with the template [(*See Mozilla's html guide for more info.*)](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/maxlength)
+- ~~Prevent recursive shorthands (i.e. shorthands don't point to anything associated with the home domain~~
+- ~~Set up templating for the index page so it executes based on site name (i.e. redirect.samhall.xyz) instead of changing everything in each file manually.~~
+- ~~Set max length of shorthand and make it work with the template [(*See Mozilla's html guide for more info.*)](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/maxlength)~~
 - Final cleanup of source code so it's readable, sorry for the mess (🙏 pardonnez-moi) 
