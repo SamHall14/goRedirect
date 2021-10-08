@@ -280,6 +280,8 @@ func createHandler(w http.ResponseWriter, r *http.Request) {
 	if !(shorthandCheck.MatchString(tmpShorthand)) {
 		fmt.Fprintln(w, "<h1>400: Bad Request</h1>Please define a target with alphanumeric characters!")
 		http.Error(w, "", http.StatusBadRequest)
+		// can't believe I forgot to return remind me to learn how to unit test eventually
+		return
 	}
 	// check if links already is taken
 	if links.Redirects[tmpShorthand] != "" {
