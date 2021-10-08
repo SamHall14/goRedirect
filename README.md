@@ -45,8 +45,8 @@ server {
 - Get certauto running with this server
 - ~~Have an autosave feature that saves object to a separate file and the feature to recover with it.~~
 - Set up the flag package to allow for custom ports/ other features (maybe save timer)
-- Get redirect to show the site as is without :8080 at the end.
-- Set up a test to check is the target is a valid site
+- Get redirect to show the site as is without :8080 at the end (this has something to do with nginx but I don't know how to make it gel with go/nginx without the nginx unit system).
+- ~~Set up a test to check is the target is a valid site~~ (System will send a get request and will only accept target if OK 200)
 - ~~Prevent recursive shorthands (i.e. shorthands don't point to anything associated with the home domain~~
 - ~~Set up templating for the index page so it executes based on site name (i.e. redirect.samhall.xyz) instead of changing everything in each file manually.~~
 - ~~Set max length of shorthand and make it work with the template [(*See Mozilla's html guide for more info.*)](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/maxlength)~~
